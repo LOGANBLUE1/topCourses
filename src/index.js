@@ -12,6 +12,4 @@ root.render(
     <App />
     <ToastContainer/>
   </div>
-
-
 );

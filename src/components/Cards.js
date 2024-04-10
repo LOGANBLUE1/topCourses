@@ -2,9 +2,7 @@ import React from 'react'
 import Card from './Card';
 import { useState } from 'react';
 
-const Cards = (props) => {
-    let courses = props.courses;
-    let category = props.category;
+const Cards = ({courses, category}) => {
     const [likedCourses, setLikedCourses] = useState([]);
     
     function getCourses() {
@@ -18,7 +16,7 @@ const Cards = (props) => {
             return allCourses;
         }
         else {
-            //main sirf specific categiry ka data array krunga  
+            //specific categiry ka data send krunga  
             return courses[category];      
         }
 
@@ -29,8 +27,8 @@ const Cards = (props) => {
       {
         getCourses().map( (course) => (
             <Card key={course.id} 
-            course = {course} 
-            likedCourses={likedCourses}
+              course = {course} 
+              likedCourses={likedCourses}
             setLikedCourses={setLikedCourses}/>
         ))
       }

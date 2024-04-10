@@ -33,27 +33,19 @@ const App = () => {
   
 
   return (
-    <div className="min-h-screen flex flex-col bg-bgDark2">
-      <div>
+    <div className="min-h-screen flex flex-col bg-bgDark2">\
         <Navbar/>
-      </div>
-      <div className="bg-bgDark2">
-        <div>
-          <Filter 
+        <Filter className="bg-bgDark2"
           filterData={filterData}
-            category={category}
-            setCategory={setCategory}
-          />
-        </div>
-        <div className="w-11/12 max-w-[1200px] 
-        mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
-        {
-            loading ? (<Spinner/>) : (<Cards courses={courses} category={category}/>)
-          }
-        </div>
+          category={category}
+          setCategory={setCategory}
+        />
+      <div className="w-11/12 max-w-[1200px] 
+      mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
+      {
+        loading ? <Spinner/> : <Cards courses={courses} category={category}/>
+      }
       </div>
-
-
     </div>
   );
 };
